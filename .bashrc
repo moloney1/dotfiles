@@ -118,7 +118,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ignore following commands in history
+# ignore following commands in history.
 export HISTIGNORE="git checkout*:rm -r*" 
 
 
