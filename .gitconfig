@@ -1,0 +1,5 @@
+[user]
+	email = moloneer@tcd.ie
+	name = Eric Moloney
+[alias]
+	ls = ls-tree -r master
