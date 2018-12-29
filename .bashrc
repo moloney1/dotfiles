@@ -123,4 +123,4 @@ fi
 # ignore following commands in history
 export HISTIGNORE="git checkout*:rm*" 
 
-
+export EDITOR=vim
