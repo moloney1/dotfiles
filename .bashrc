@@ -124,6 +124,3 @@ fi
 export HISTIGNORE="git checkout*:rm*" 
 
 
-# added by Miniconda3 installer
-
-export PATH="/usr/local/bin/miniconda3/bin:$PATH"
