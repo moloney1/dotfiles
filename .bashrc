@@ -107,6 +107,8 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
+alias activate='cd venv 2> /dev/null;source bin/activate'
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -118,7 +120,7 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# ignore following commands in history.
+# ignore following commands in history
 export HISTIGNORE="git checkout*:rm -r*" 
 
 
