@@ -121,7 +121,7 @@ if ! shopt -oq posix; then
 fi
 
 # ignore following commands in history
-export HISTIGNORE="git checkout*:rm -r*" 
+export HISTIGNORE="git checkout*:rm*" 
 
 
 # added by Miniconda3 installer
