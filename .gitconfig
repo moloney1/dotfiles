@@ -3,3 +3,5 @@
 	name = Eric Moloney
 [alias]
 	ls = ls-tree -r master
+	s = status
+	nb = checkout -b
