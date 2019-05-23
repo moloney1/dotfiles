@@ -1,16 +1,18 @@
-source .functions
-#export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
-
 NAMECOL="\[$(tput setaf 70)\]"
 DIRCOL="\[$(tput setaf 74)\]"
 GITCOL="\[$(tput setaf 132)\]"
 RESET="\[$(tput sgr0)\]"
 BOLD="\[$(tput bold)\]"
 
-#export PS1="$USER in \$(trunc_pwd) $ "
+# username in bold, green
+NAME="$NAMECOL$BOLD\u$RESET" 
 
-NAME="$NAMECOL$BOLD\u$RESET"
-DIR="$DIRCOL$BOLD\$(trunc_pwd)$RESET"
+# current directory, bold, blue truncated
+# as ../example/dir if too long
+DIR="$DIRCOL$BOLD\$(trunc_pwd)$RESET" 
+
+# if inside a git repo, show branch name
+# in pink, brackets e.g. (master)
 GIT="$GITCOL\$(parse_git_branch)$RESET"
 
 PS1="$NAME in $DIR$GIT $ " 
