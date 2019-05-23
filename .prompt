@@ -1,6 +1,6 @@
-NAMECOL="\[$(tput setaf 70)\]"
-DIRCOL="\[$(tput setaf 74)\]"
-GITCOL="\[$(tput setaf 132)\]"
+NAMECOL="\[$(tput setaf 226)\]"
+DIRCOL="\[$(tput setaf 14)\]"
+GITCOL="\[$(tput setaf 206)\]"
 RESET="\[$(tput sgr0)\]"
 BOLD="\[$(tput bold)\]"
 
