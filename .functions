@@ -5,5 +5,39 @@ function mk() {
 
 # Open man page as PDF
 function manpdf() {
- man -t "${1}" | open -f -a /Applications/Preview.app/
+  man -t "${1}" | open -f -a /Applications/Preview.app/
 }
+
+function checkbranch() {
+  BRANCH="";
+  if [[ -d "./.git/" ]]; then
+    BRANCH="$(head -1 ./.git/HEAD)" 
+    IFS='/' read -ra LINE <<< "$BRANCH"
+    for i in "${LINE[@]}"; do
+     BRANCH="$i"
+    done
+  fi
+  export $BRANCH > /dev/null 2>&1
+}
+
+function parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+function trunc_pwd() {
+  
+  MAX_LEN=20;
+  WD="${PWD/#$HOME/'~'}";
+  while [[ ${#WD} -gt $MAX_LEN ]]; do
+    # get rid of trailing tilde
+    WD="${WD/'~'/}";
+    # remove ".." from previous iterations
+    WD="${WD/../}";
+    # now replace first dir in $WD with .. (if not ~ [!])
+    WD=$(echo $WD | sed -r 's/^\/[^\/]+/../')
+  done 
+  echo $WD
+
+}
+
+
