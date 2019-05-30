@@ -1,7 +1,9 @@
 :set background=dark
 :set tabstop=4
 
-:colorscheme apprentice
+":colorscheme kalt
+":colorscheme apprentice
+:colorscheme gruvbox
 
 :command Q q
 :command W w
