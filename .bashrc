@@ -4,6 +4,8 @@
 
 source ~/.functions
 
+set -o vi
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -134,3 +136,7 @@ export NVM_DIR="$HOME/.nvm"
 if [ -d /usr/local/bin/android-studio ]; then 
 	export PATH="$PATH:/usr/local/bin/android-studio/bin"
 fi
+
+# rust
+export PATH="$HOME/.cargo/bin:$PATH"
+
