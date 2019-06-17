@@ -1,11 +1,14 @@
 NAMECOL="\[$(tput setaf 226)\]"
 DIRCOL="\[$(tput setaf 14)\]"
 GITCOL="\[$(tput setaf 206)\]"
+HOSTCOL="\[$(tput setaf 15)\]"
 RESET="\[$(tput sgr0)\]"
 BOLD="\[$(tput bold)\]"
 
 # username in bold, green
 NAME="$NAMECOL$BOLD\u$RESET" 
+
+HOST="$HOSTCOL$BOLD\h$RESET"
 
 # current directory, bold, blue truncated
 # as ../example/dir if too long
@@ -15,4 +18,12 @@ DIR="$DIRCOL$BOLD\$(trunc_pwd)$RESET"
 # in pink, brackets e.g. (master)
 GIT="$GITCOL\$(parse_git_branch)$RESET"
 
-PS1="$NAME in $DIR$GIT $ " 
+#PS1="$NAME in $DIR$GIT $ " 
+PS1="$NAME" 
+
+# dont show hostname if using laptop/pc
+if [ -z "$PC" ]; then
+	PS1+="@$HOST"
+fi
+
+PS1+=" in $DIR$GIT $ "
