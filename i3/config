@@ -44,8 +44,8 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # application binds
-bindsym $mod+p exec "google-chrome;notify-send -t 3000 Starting\ Chrome"
-bindsym $mod+o exec "spotify;notify-send -t 3000 Starting\ Spotify"
+bindsym $mod+p exec "notify-send -t 3000 Starting\ Chrome;google-chrome"
+bindsym $mod+o exec "notify-send -t 3000 Starting\ Spotify;spotify"
 bindsym $mod+w exec feh --randomize --bg-scale ~/Pictures/Walls/*
 
 # change focus
