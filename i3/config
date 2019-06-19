@@ -31,6 +31,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+backslash exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -43,8 +44,8 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
 
 # application binds
-bindsym $mod+p exec google-chrome
-bindsym $mod+o exec spotify
+bindsym $mod+p exec "google-chrome;notify-send -t 3000 Starting\ Chrome"
+bindsym $mod+o exec "spotify;notify-send -t 3000 Starting\ Spotify"
 bindsym $mod+w exec feh --randomize --bg-scale ~/Pictures/Walls/*
 
 # change focus
