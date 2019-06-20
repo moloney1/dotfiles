@@ -5,3 +5,4 @@
 	ls = ls-tree -r master
 	s = status
 	nb = checkout -b
+	co = checkout
