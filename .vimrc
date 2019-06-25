@@ -7,15 +7,12 @@ syntax on
 filetype indent on
 autocmd Filetype python setlocal  tabstop=4 sw=4 noexpandtab
 
+" honourable mentions
 ":colorscheme kalt
 ":colorscheme apprentice
-:colorscheme gruvbox
 
-try
-    colorscheme gruvbox
-catch /^Vim\%((\a\+)\)\=:E185/
-	colorscheme torte 
-endtry
+:colorscheme torte "load this default first
+:silent! colorscheme gruvbox "try load this, suppress error if not available
 
 :command Q q
 :command W w
