@@ -6,3 +6,9 @@
 	s = status
 	nb = checkout -b
 	co = checkout
+	b = branch
+    amend = commit --amend
+    sf = show --name-only
+    cb = rev-parse --abbrev-ref HEAD
+[url "git@github.com:"]
+	insteadOf = https://github.com/
