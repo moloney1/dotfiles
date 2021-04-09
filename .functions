@@ -11,7 +11,7 @@ function manpdf() {
 function checkbranch() {
   BRANCH="";
   if [[ -d "./.git/" ]]; then
-    BRANCH="$(head -1 ./.git/HEAD)" 
+    BRANCH="$(head -1 ./.git/HEAD)"
     IFS='/' read -ra LINE <<< "$BRANCH"
     for i in "${LINE[@]}"; do
      BRANCH="$i"
@@ -25,19 +25,23 @@ function parse_git_branch() {
 }
 
 function trunc_pwd() {
-  
   MAX_LEN=20;
   WD="${PWD/#$HOME/'~'}";
-  while [[ ${#WD} -gt $MAX_LEN ]]; do
-    # get rid of trailing tilde
-    WD="${WD/'~'/}";
-    # remove ".." from previous iterations
-    WD="${WD/../}";
-    # now replace first dir in $WD with .. (if not ~ [!])
-    WD=$(echo $WD | sed -r 's/^\/[^\/]+/../')
-  done 
+  # if length of basename is > MAX_LEN, use '../$BASENAME'
+  BASENAME=$(basename $WD)
+  if [[ ${#BASENAME} -gt MAX_LEN ]]; then
+    WD="../$BASENAME"
+  else
+    while [[ ${#WD} -gt $MAX_LEN ]]; do
+      # get rid of trailing tilde
+      WD="${WD/'~'/}";
+      # remove ".." from previous iterations
+      WD="${WD/../}";
+      # now replace first dir in $WD with .. (if not ~)
+      WD=$(echo $WD | sed -r 's/^\/[^\/]+/../')
+    done
+  fi
   echo $WD
-
 }
 
 
