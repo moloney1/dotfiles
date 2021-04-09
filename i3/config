@@ -47,6 +47,7 @@ bindsym $mod+d exec dmenu_run
 bindsym $mod+p exec "notify-send -t 3000 Starting\ Chrome;google-chrome"
 bindsym $mod+o exec "notify-send -t 3000 Starting\ Spotify;spotify"
 bindsym $mod+w exec feh --randomize --bg-scale ~/Pictures/Walls/*
+bindsym $mod+Shift+Delete exec "shutdown now"
 
 # change focus
 bindsym $mod+h focus left
